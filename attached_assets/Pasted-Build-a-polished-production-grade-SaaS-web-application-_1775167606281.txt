@@ -1,0 +1,722 @@
+Build a polished, production-grade SaaS web application called **SnapProof AI** for **Shotgun Ninjas Productions**.
+
+## PRODUCT SUMMARY
+SnapProof AI is a mobile-first field documentation and proof-of-work platform for MSP technicians, field IT engineers, mechanics, contractors, inspectors, and service operators.
+
+The app turns:
+- photos
+- voice notes
+- typed notes
+- findings
+- parts used
+- labor details
+
+into:
+- client-ready reports
+- proof-of-work summaries
+- estimate drafts
+- change-order drafts
+- executive summaries
+- branded PDF closeout documents
+- shareable customer report links
+
+This is not a generic note-taking app, not a PSA, and not a bloated CRM. It is a sharp, focused “capture to proof to payment” workflow tool.
+
+The experience must feel fast, premium, modern, and immediately useful.
+
+---
+
+## PRIMARY BUSINESS GOAL
+Create a SaaS product that is:
+1. easy to understand in under 15 seconds
+2. visually impressive enough to create trust
+3. operationally simple enough for small businesses and solo users
+4. valuable enough that users want to pay quickly
+5. extensible into future white-label MSP and field service versions
+
+---
+
+## TARGET USER SEGMENTS
+Primary launch users:
+1. MSP field technicians and onsite IT support engineers
+2. Solo IT consultants
+3. Mechanics / mobile diagnostics operators
+4. Small service contractors
+5. Low-voltage/security/cabling field teams
+
+The initial UX and messaging should be strongest for:
+- IT / MSP field service
+- Mechanic / diagnostic documentation
+- Small contractor job proof
+
+---
+
+## CORE VALUE PROPOSITION
+Users should instantly understand:
+- Upload photos
+- Record notes
+- AI organizes everything
+- Export a polished report
+- Look more professional
+- Protect yourself with documentation
+- Help justify billing and recommendations
+
+Core promise:
+**Turn field chaos into polished proof in minutes.**
+
+Secondary promise:
+**Get paid faster, communicate better, and document everything without drowning in admin work.**
+
+---
+
+## DESIGN DIRECTION
+Use a premium, dark, tactical, modern interface aligned with the Shotgun Ninjas aesthetic.
+
+### Visual style:
+- Dark graphite / black UI
+- Crimson / red accent actions
+- Clean typography
+- Spacious layout
+- Subtle motion and transitions
+- High-end SaaS look
+- Mobile-first interaction patterns
+- Dashboard should feel like a field operations console, not a toy app
+
+### Avoid:
+- generic startup gradients everywhere
+- childish illustrations
+- cluttered dashboards
+- weak spacing
+- low-contrast UI
+- repetitive card overload
+- cheap-looking component defaults
+
+### Desired feel:
+- rugged
+- efficient
+- premium
+- professional
+- trustworthy
+- practical
+- slightly cinematic without becoming flashy
+
+---
+
+## TECH STACK
+Use a Replit-friendly production-ready architecture.
+
+### Frontend:
+- React
+- TypeScript
+- Tailwind CSS
+- shadcn/ui or equivalent polished component system
+- React Router
+- React Query / TanStack Query for API state
+- Framer Motion for tasteful UI motion
+
+### Backend:
+- Node.js
+- Express.js
+- TypeScript
+- PostgreSQL
+- Prisma ORM
+
+### Auth:
+- secure auth with session or JWT strategy
+- organization-aware multi-tenant model
+- email/password auth
+- magic link optional if practical
+- role support (owner, admin, tech, viewer)
+
+### Storage:
+- object storage abstraction for uploads
+- support image upload and document attachments
+- prepare architecture for S3-compatible storage
+
+### Billing:
+- Stripe integration
+- subscription tiers
+- usage tracking
+- plan enforcement
+- upgrade/downgrade flows
+
+### Document generation:
+- PDF generation with polished branded layout
+- HTML-to-PDF rendering or equivalent stable method
+
+### Voice notes:
+- upload audio files
+- transcription-ready architecture
+- include transcription service abstraction layer
+- if live transcription cannot be fully implemented, scaffold it cleanly with mock/demo mode and clear interface boundaries
+
+### PWA:
+- installable web app support
+- responsive mobile experience
+- offline-tolerant draft UX if possible
+
+---
+
+## APPLICATION STRUCTURE
+
+### Public Site Pages
+Build these polished public-facing pages:
+
+1. **Landing Page**
+2. **Features Page**
+3. **Use Cases Page**
+4. **Pricing Page**
+5. **Demo / Sample Reports Page**
+6. **Login**
+7. **Sign Up**
+8. **Contact / Request Demo**
+9. **Privacy Policy**
+10. **Terms of Service**
+
+### Authenticated App Pages
+Build these authenticated pages:
+
+1. **Dashboard**
+2. **Jobs**
+3. **Job Detail / Report Builder**
+4. **Customers**
+5. **Templates**
+6. **Exports**
+7. **Team**
+8. **Branding**
+9. **Billing**
+10. **Settings**
+11. **Profile**
+12. **Activity Log**
+
+### Admin / Owner Views
+Add owner-level organization administration:
+- plan usage
+- user management
+- storage usage
+- organization branding
+- template management
+- billing status
+
+---
+
+## LANDING PAGE REQUIREMENTS
+The landing page must be sharp enough that someone would want to try it immediately.
+
+### Hero section
+Include:
+- powerful headline
+- subheadline
+- primary CTA
+- secondary CTA
+- product mockup or animated preview card
+- trust-building layout
+- strong above-the-fold clarity
+
+Use headline options like:
+- Turn field chaos into client-ready proof.
+- From job photos to polished reports in minutes.
+- Capture it once. Prove it. Bill faster.
+
+### Additional landing sections
+Include:
+1. How it works in 3 steps
+2. Before vs after workflow comparison
+3. Use cases by industry
+4. Product screenshots/mockups
+5. Example generated report preview
+6. Pricing section
+7. FAQ section
+8. Social proof / testimonial placeholders
+9. CTA banner near the end
+
+### Conversion focus
+The page should feel like a real SaaS landing page ready for launch, not a placeholder.
+Use polished copy throughout. Avoid lorem ipsum. Seed realistic product messaging.
+
+---
+
+## AUTHENTICATED UX REQUIREMENTS
+
+### Dashboard
+The dashboard should include:
+- quick “New Job” button
+- recent jobs
+- report generation stats
+- export history
+- usage meter based on plan
+- favorite templates
+- pending drafts
+- customer count
+- storage used
+- recent team activity
+
+### First-run onboarding
+After signup, guide the user through a first-win flow:
+1. Create organization
+2. Add logo / brand color optionally
+3. Create first job
+4. Upload sample photos or use demo assets
+5. Generate first report
+
+The user should be able to reach a meaningful result quickly.
+
+---
+
+## CORE WORKFLOW: JOB TO REPORT
+
+Build a clean wizard-like workflow that also supports freeform editing.
+
+### Job creation flow
+Step 1: Create job  
+Step 2: Add customer/site info  
+Step 3: Add photos / files  
+Step 4: Add voice notes / typed notes  
+Step 5: Add findings  
+Step 6: Add parts and labor  
+Step 7: Select report template / tone  
+Step 8: Generate AI draft  
+Step 9: Review/edit  
+Step 10: Export PDF or share link
+
+### Job data model should support:
+- job title
+- job type
+- site/customer
+- assigned technician
+- created date
+- status
+- notes
+- findings
+- recommendations
+- parts used
+- labor entries
+- files
+- report versions
+- exported artifacts
+- share links
+- signatures
+
+---
+
+## CORE MVP FEATURES
+
+### 1. Multi-tenant organizations
+- users belong to one or more organizations if practical
+- each organization has its own branding, users, customers, jobs, exports, and templates
+- strong tenant isolation in backend logic
+
+### 2. Job management
+- create/edit/archive jobs
+- search and filter jobs
+- status tags
+- timestamps
+- assigned users
+- customer association
+
+### 3. Customer management
+- create/edit customers
+- customer contact info
+- site info
+- notes
+- past jobs per customer
+
+### 4. Photo and file uploads
+- drag and drop
+- mobile-friendly capture
+- image preview
+- image compression pipeline if practical
+- sort/reorder images
+- captions per image
+
+### 5. Voice notes and transcription architecture
+- upload audio note files
+- attach to job
+- scaffold transcription pipeline cleanly
+- store transcript text
+- allow editing transcript
+
+### 6. Typed technician notes
+- structured note sections
+- rich text or smart textarea UX
+- internal vs customer-facing notes
+
+### 7. Findings, recommendations, and labor
+- structured fields for issue, cause, resolution, recommendations
+- labor line items
+- parts line items
+- pricing-ready structure
+- optional estimate block
+
+### 8. AI report generation system
+Create a modular AI content generation layer.
+
+The AI system must support generation of:
+- Client Summary
+- Technical Summary
+- Findings / Cause / Resolution
+- Recommended Next Steps
+- Estimate Draft
+- Change Order Draft
+- Executive Summary
+- Internal Technician Notes Refinement
+
+### AI output modes
+Support multiple generation modes:
+- client-friendly
+- technical
+- estimate-focused
+- executive
+- concise
+- detailed
+
+### Important:
+Do not make the AI output repetitive or low quality.
+Outputs must feel structured and useful, with editable results.
+Design a prompt-template architecture so more industries/templates can be added later.
+
+### 9. Template system
+Include built-in templates for:
+- MSP Onsite Visit
+- Network Remediation Summary
+- Workstation Deployment
+- Server / Infrastructure Visit
+- Vehicle Diagnostic Inspection
+- Repair Estimate
+- Contractor Site Visit
+- Security / Camera Install Visit
+
+Each template should influence:
+- input form defaults
+- generated report structure
+- field labels
+- tone
+
+### 10. PDF export engine
+Create polished branded PDF exports with:
+- organization logo
+- organization name
+- report title
+- date/time
+- customer info
+- site info
+- technician info
+- image sections
+- findings
+- recommendations
+- labor/parts table
+- signature area
+- footer branding
+- strong print layout
+
+The PDFs should look executive-ready and client-safe.
+
+### 11. Shareable report links
+- generate secure share links
+- public report view with brand styling
+- optional expiration support scaffold
+- printable customer view
+
+### 12. Branding system
+Each org should be able to manage:
+- logo
+- accent color
+- company name
+- footer text
+- contact details
+- default PDF header/footer data
+
+### 13. Team management
+- invite team members
+- assign roles
+- add/remove users
+- show team activity
+- seat limits based on subscription plan
+
+### 14. Activity log
+Track important actions:
+- job created
+- report generated
+- export created
+- member invited
+- branding updated
+- customer added
+
+### 15. Billing and plan enforcement
+Integrate Stripe and support plans:
+- Free
+- Solo
+- Pro
+- Team
+- White Label / MSP
+
+Enforce:
+- report limits
+- team seat limits
+- branding restrictions
+- feature availability
+
+---
+
+## SUBSCRIPTION PLANS TO IMPLEMENT
+
+### Free
+- 3 reports/month
+- basic exports
+- SnapProof branding visible
+- limited templates
+- single user
+
+### Solo
+- $19/month
+- 25 reports/month
+- custom logo
+- basic customer management
+- better exports
+
+### Pro
+- $49/month
+- unlimited reports
+- advanced templates
+- share links
+- branded exports
+- signatures
+- better history
+
+### Team
+- $99/month
+- up to 5 users
+- team workspace
+- shared customers
+- team activity log
+- advanced branding
+
+### White Label / MSP
+- $199/month
+- white-label exports
+- full branding control
+- priority support
+- team controls
+- higher usage/storage
+- future MSP integration-ready structure
+
+Build a pricing system that makes upgrades obvious and attractive.
+
+---
+
+## DATA MODEL REQUIREMENTS
+Design a robust Prisma schema.
+
+Include models for:
+- User
+- Session
+- Organization
+- Membership
+- Subscription
+- PlanUsage
+- Customer
+- Site
+- Job
+- JobNote
+- JobFinding
+- JobRecommendation
+- LaborEntry
+- PartEntry
+- FileAsset
+- AudioNote
+- Transcript
+- ReportTemplate
+- GeneratedReport
+- ReportVersion
+- ExportArtifact
+- ShareLink
+- BrandingSettings
+- ActivityLog
+
+Use proper relations and tenant-safe queries.
+
+---
+
+## DEMO / SEEDED DATA
+The product must not feel empty.
+
+Seed realistic demo content:
+- demo organization
+- demo customers
+- demo jobs
+- demo findings
+- demo images/placeholders
+- demo reports
+- demo templates
+- dashboard analytics data
+
+Also add polished empty states for when real users have no content yet.
+
+---
+
+## SAMPLE COPY / CONTENT QUALITY
+Do not leave the app with generic placeholders.
+Use realistic copy throughout.
+
+Examples:
+- “Upload site photos and document the work performed.”
+- “Turn scattered field notes into a report your client can actually understand.”
+- “Protect your labor with proof, not memory.”
+
+Add meaningful field labels, helper text, onboarding text, and CTA copy.
+
+---
+
+## UX DETAILS THAT MUST EXIST
+Include:
+- loading states
+- success states
+- empty states
+- inline validation
+- error boundaries
+- toasts/notifications
+- confirmation modals where appropriate
+- responsive layout
+- sticky action areas on mobile where useful
+- keyboard-friendly interactions on desktop
+- clean search/filter/sort behavior
+
+---
+
+## COMPONENT REQUIREMENTS
+Build reusable components for:
+- page shells
+- KPI stat cards
+- data tables
+- upload panels
+- stepper/wizard
+- report preview
+- pricing cards
+- template cards
+- activity feed
+- customer selector
+- job status pills
+- branded PDF preview blocks
+
+Keep code modular and reusable.
+
+---
+
+## SECURITY / PRODUCTION SANITY
+Implement production-conscious foundations:
+- environment variable validation
+- backend input validation
+- tenant isolation
+- secure auth practices
+- authorization middleware
+- file upload validation
+- sensible rate-limiting scaffold
+- safe API error handling
+- no secrets hardcoded
+- no broken mock endpoints pretending to be real
+
+If a feature is partially scaffolded, clearly separate mock/demo behavior from production-ready pathways.
+
+---
+
+## DEVELOPER EXPERIENCE
+Structure the code cleanly and professionally.
+
+Include:
+- clear folder structure
+- README with setup instructions
+- environment variables example file
+- comments where logic is non-obvious
+- clean API service organization
+- utility helpers
+- consistent naming
+- scalable architecture for future expansion
+
+Suggested folders:
+- /client
+- /server
+- /shared
+- /prisma
+- /public
+- /docs
+
+---
+
+## FUTURE-READY ARCHITECTURE
+Prepare the codebase so it can later support:
+- OCR for model/serial extraction
+- geotag/time-stamped photo metadata
+- offline draft sync
+- e-signatures
+- estimate approval workflows
+- white-label subdomains
+- TechDeck integration
+- TradeFlow integration
+- TorqueShed diagnostic mode
+- API integrations for PSA/CRM systems
+- AI prompt packs by vertical
+
+Do not fully build all of those now, but make the architecture friendly to them.
+
+---
+
+## IMPORTANT PRODUCT STRATEGY RULES
+1. Prioritize the fastest path to a “wow, this is useful” first-run experience.
+2. Keep workflows focused and clean.
+3. Avoid bloating the MVP with unrelated enterprise complexity.
+4. Make the product visually credible enough to sell.
+5. Make the app feel like it solves an expensive problem.
+6. Every screen should either build trust, save time, or move the user closer to payment.
+
+---
+
+## DELIVERABLE EXPECTATION
+Build the full app in a polished MVP-plus production style with:
+- complete public site
+- authenticated multi-tenant app
+- working dashboard
+- jobs workflow
+- template system
+- report generation scaffolding
+- PDF export flow
+- branding system
+- billing scaffolding
+- seeded data
+- responsive UI
+- realistic copy
+- modular architecture
+- launch-quality look and feel
+
+The final result should feel like a monetizable SaaS product that could be refined and launched, not a prototype.
+
+---
+
+## OPTIONAL HIGH-VALUE POLISH IF FEASIBLE
+If practical within build scope, also include:
+- animated hero mockup on landing page
+- interactive sample report preview
+- compare mode showing “raw notes” vs “polished report”
+- drag-and-drop image reorder
+- report version history
+- installable PWA manifest
+- customer signature capture scaffold
+- sample “Generated by AI, reviewed by technician” label system
+
+---
+
+## BRANDING
+Brand the app as:
+**SnapProof AI**
+by **Shotgun Ninjas Productions**
+
+Brand personality:
+- sharp
+- modern
+- capable
+- tactical
+- premium
+- no-nonsense
+
+Avoid goofy branding or gimmicky copy.
+
+Build this as if it is intended to become a real subscription business.
