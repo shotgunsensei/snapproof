@@ -3,10 +3,9 @@ export function PublicLayout({ children }: { children: React.ReactNode }) {
     <div className="min-h-screen bg-background text-foreground flex flex-col">
       <header className="border-b border-border/50 sticky top-0 bg-background/80 backdrop-blur-md z-50">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-          <div className="font-bold text-2xl tracking-tight flex items-center gap-2">
-            <div className="w-8 h-8 bg-primary rounded-sm shadow-[0_0_15px_rgba(220,38,38,0.5)]" />
-            SNAPPROOF
-          </div>
+          <a href="/" className="flex items-center gap-2">
+            <img src="/images/snapproof-logo.png" alt="SnapProof OS" className="h-14 object-contain" />
+          </a>
           <nav className="hidden md:flex items-center gap-8">
             <a href="/features" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Features</a>
             <a href="/use-cases" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">Use Cases</a>

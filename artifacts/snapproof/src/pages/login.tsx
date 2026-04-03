@@ -30,7 +30,10 @@ export default function Login() {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-24 p-8 bg-card border border-border rounded-lg shadow-xl">
+    <div className="max-w-md mx-auto mt-16 p-8 bg-card border border-border rounded-lg shadow-xl">
+      <div className="flex justify-center mb-6">
+        <img src="/images/snapproof-logo.png" alt="SnapProof OS" className="h-16 object-contain" />
+      </div>
       <h1 className="text-2xl font-bold mb-2">Welcome Back</h1>
       <p className="text-muted-foreground mb-6">Log in to your operations console.</p>
       <form onSubmit={handleSubmit} className="space-y-4">

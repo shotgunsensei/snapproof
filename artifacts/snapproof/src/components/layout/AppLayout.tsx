@@ -43,10 +43,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
     <div className="min-h-[100dvh] bg-background flex flex-col md:flex-row">
       {/* Mobile Header */}
       <header className="md:hidden border-b border-border bg-card p-4 flex items-center justify-between sticky top-0 z-50">
-        <div className="font-bold text-xl tracking-tight text-foreground flex items-center gap-2">
-          <div className="w-6 h-6 bg-primary rounded-sm shadow-[0_0_10px_rgba(220,38,38,0.4)]" />
-          SNAP<span className="text-muted-foreground">PROOF</span>
-        </div>
+        <img src="/images/snapproof-logo.png" alt="SnapProof OS" className="h-10 object-contain" />
         <Button variant="ghost" size="icon" onClick={handleLogout}>
           <LogOut className="h-5 w-5" />
         </Button>
@@ -55,10 +52,7 @@ export function AppLayout({ children }: { children: React.ReactNode }) {
       {/* Desktop Sidebar */}
       <aside className="hidden md:flex w-64 flex-col border-r border-border bg-card sticky top-0 h-screen">
         <div className="p-6">
-          <div className="font-bold text-xl tracking-tight text-foreground flex items-center gap-2">
-            <div className="w-6 h-6 bg-primary rounded-sm shadow-[0_0_10px_rgba(220,38,38,0.4)]" />
-            SNAP<span className="text-muted-foreground">PROOF</span>
-          </div>
+          <img src="/images/snapproof-logo.png" alt="SnapProof OS" className="h-12 object-contain" />
         </div>
 
         <nav className="flex-1 px-4 space-y-1 overflow-y-auto">

@@ -10,13 +10,20 @@ export default function Index() {
         <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl leading-relaxed">
           The tactical field operations console for mechanics, IT engineers, and contractors. Capture photos, document findings, and generate client-ready reports instantly.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4">
+        <div className="flex flex-col sm:flex-row gap-4 mb-16">
           <Link href="/register" className="bg-primary text-primary-foreground px-8 py-4 rounded-md font-medium text-lg shadow-lg hover:bg-primary/90 transition-all active:scale-[0.98]">
             Start for free
           </Link>
           <Link href="/demo" className="bg-secondary text-secondary-foreground border border-border px-8 py-4 rounded-md font-medium text-lg hover:bg-secondary/80 transition-all">
             View Sample Reports
           </Link>
+        </div>
+        <div className="w-full max-w-5xl">
+          <img 
+            src="/images/hero-mockup.png" 
+            alt="SnapProof OS - Field documentation on mobile and tablet" 
+            className="w-full rounded-xl shadow-2xl shadow-primary/10 border border-border/30"
+          />
         </div>
       </section>
 
